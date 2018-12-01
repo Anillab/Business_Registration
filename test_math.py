@@ -7,4 +7,4 @@ class TestMath(unittest.TestCase):
         self.assertEqual(maths.add(-2,-4),-6)
         self.assertEqual(maths.add(2,-4),-2)
  if __name__ == '__main__':
-     unittest.main()
+    unittest.main()
