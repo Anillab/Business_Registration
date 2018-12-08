@@ -2,11 +2,14 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_uploads import UploadSet,configure_uploads,IMAGES
 from config import config_options
 
 bootstrap=Bootstrap()
 db=SQLAlchemy()
 login_manager=LoginManager()
+photos=UploadSet('photos',IMAGES)
+login_manager.session_protection='strong'
 
 def create_app(config_name):
     '''
@@ -19,6 +22,7 @@ def create_app(config_name):
 
     # app configurations
     app.config.from_object(config_options[config_name])
+    configure_uploads(app,photos)
 
     # initialize flask extensions
     bootstrap.init_app(app)
