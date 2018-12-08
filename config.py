@@ -2,7 +2,8 @@
 class Config:
     '''Parent Configuration class
     '''
-    SQLALCHEMY_DATABSE_URI='postgresql://anilla:Busolo@1997@localhost/andelabiz'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://anilla:Busolo@1997@localhost/andelabiz'
+    UPLOADED_PHOTOS_DEST='app/static/photos'
     SECRET_KEY='maishamagumukaka'
     SQLALCHEMY_TRACK_MODIFICATIONS=True
 
