@@ -71,3 +71,14 @@ def get_categories():
     category=Category.query.filter(name=cat_name).first_or_404()
     businesses=category.businesses.query.all()
     return render_template('catergory.html',category=category,businesses=businesses)
+
+
+@main.route('/businesses/reviews/<string:busn_name>', methods=['GET','POST'])
+def reviews(busn_name):
+    form=ReviewForm()
+    reviewer=current_user.id
+    review=form.review.data
+    test_busn=Reviews(review=review)
+    db.session.add(test_busn)
+    db.session.commit()
+    return render_template('reviews.html',form=form)

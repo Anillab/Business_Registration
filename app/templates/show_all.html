@@ -5,6 +5,7 @@
   {% for busn in businesses%}
   <li>
         {{busn}}
+        <a class="nav-link" href="{{url_for('main.delete_busn', busn_name=busn)}}">Delete Your Business</a>
 </li>
     {%endfor%}
 {%endblock%}
