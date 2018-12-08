@@ -1,0 +1,11 @@
+{% import  'bootstrap/wtf.html' as wtf%}
+{% extends 'index.html'%}
+{% block content%}
+<ul>
+  {% for busn in businesses%}
+  <li>
+        {{busn}}
+</li>
+    {%endfor%}
+{%endblock%}
+</ul>
