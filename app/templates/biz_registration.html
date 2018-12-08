@@ -1,0 +1,11 @@
+{% import  'bootstrap/wtf.html' as wtf%}
+{% extends 'index.html'%}
+{%block content%}
+         {{wtf.quick_form(form)}}
+        <hr>
+     <div class="border-top pt-3">
+      <small class="text-muted">
+        Already have a business ? <a class="ml-2" href="#">visit </a>
+      </small>
+     </div>
+{%endblock%}
